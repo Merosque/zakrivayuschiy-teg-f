@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'var(--main-font)', sans-serif;
+  font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--main-font);
   min-inline-size: 320px;
   max-inline-size: 1440px;
@@ -22,15 +22,11 @@
   background-color: dimgrey;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.header { 
   align-items: center;
-  inline-size: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
   padding-block-start: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   padding-block-end: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  margin-block-start: 100px;
+  margin-block: 100px;
   background-color: #fff;
 }
 
@@ -42,4 +38,58 @@
 .header-caption {
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.width-border-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  inline-size: var(--content-width);
+  border: 2px solid #000;
+}
+
+.card {
+background-color: #fff;
+ 
+}
+
+.card-title {
+padding-inline: 10px;
+padding-block: 5px;
+}
+
+.image {
+  inline-size: 100%;
+  border-block-start: 2px solid #000;
+  border-block-end: 2px solid #000;
+}
+
+.card-description {
+  padding: 25px;
+}
+
+.card-description-text {
+  margin-block-end: 27px;
+}
+
+.card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__icon-button {
+  margin-inline-start: auto;
+  margin-inline-end: 10px;
+  border: none;
+} 
+
+.like-button {
+  margin-block-start: 25px;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
+  justify-self: right;
+  width: 130px;
+  height: 38px;
+  font-family: var(--accent-font);
 }
