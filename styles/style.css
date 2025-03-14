@@ -20,8 +20,10 @@
   min-inline-size: 320px;
   max-inline-size: 1440px;
   min-block-size: 100dvb;
-  background-color: dimgrey;
   margin-inline: auto;
+  background-image: var(--bg-gradient);
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .content {
@@ -31,20 +33,20 @@
 
 .header { 
   align-items: center;
-  padding-block-start: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
-  padding-block-end: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
+  padding-block-start: var(--header-padding);
+  padding-block-end: var(--header-padding);
   margin-block: 100px;
   background-color: #fff;
 }
 
 .header-title {
   font-family: "PressStart2P-Regular";
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-size: var(--header-text-size);
 }
 
 .header-caption {
   font-family: var(--accent-font);
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-size: var(--header-caption-text-size);
 }
 
 .width-border-style {
@@ -139,26 +141,28 @@ font-size: 18px;
 
 .save-memory-button {
   align-items: center;
-  width: 306px;
-  height: 84px;
+  width: 335px;
+  height: 51px;
   font-size: 14px;
   margin-block-end: 100px;
   align-self: center;
 }
 
 .floppy-icon {
-  width: 28px;
-  height: 28px;
-  margin-block-end: 8px;
+  width: 21px;
+  height: 21px;
+  margin-inline-end: 8px;
 }
 
 .save-memory-button-wrapper {
   display: flex;
-  flex-wrap: wrap;
   font-family: var(--accent-font);
   justify-content: center;
 }
 
+.button__text {
+  align-self: center;
+}
 
 dialog::backdrop {
   background-color: #000;
@@ -168,7 +172,7 @@ dialog::backdrop {
 .dialog-window {
   display: grid;
   grid-template-columns: min-content 1fr;
-  padding-inline: 42px;
+  padding-inline: 30px;
   padding-block: 30px;
   align-items: center;
 }
@@ -188,8 +192,67 @@ font-size: 14px;
 .dialog-window-button {
   grid-column: span 2;
   margin-inline: auto;
-  width: 257px;
+  width: var(--dialog-window-button-weight);
   height: 38px;
   text-transform: uppercase;
   margin-block-start: 30px;
 }
+
+.image-0 {
+  filter: brightness(20%);
+}
+
+.image-1 {
+  filter: contrast(125%);
+}
+
+.image-1-end {
+  filter: opacity(0.9);
+}
+
+.image-2 {
+  filter: grayscale(0.5);
+} 
+
+.image-2-end {
+  filter: saturate(130%) hue-rotate(-90deg);
+}
+
+.image-3 {
+  filter: hue-rotate(-90deg);
+}
+
+.image-3-end {
+  filter: invert(0.45);
+}
+
+.image-4 {
+  filter: blur(1rem);
+}
+
+@media (width <= 375px) {
+
+  .page {
+    --content-width: clamp(20rem, 0rem + 100vw, 23.4375rem);
+    --header-text-size: clamp(2.625rem, 0.0795rem + 12.7273vw, 3.0625rem);
+    --header-caption-text-size: clamp(0.75rem, 0.0227rem + 3.6364vw, 0.875rem);
+  }
+
+  .save-memory-button-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .floppy-icon {
+    width: 28px;
+    height: 28px;
+    margin-block-end: 8px;
+    margin-inline-end: 0;
+  }
+
+  .save-memory-button {
+    width: 306px;
+    height: 84px;
+  }
+} 
