@@ -21,6 +21,12 @@
   max-inline-size: 1440px;
   min-block-size: 100dvb;
   background-color: dimgrey;
+  margin-inline: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .header { 
@@ -94,7 +100,6 @@ font-size: 18px;
   justify-self: right;
   width: 130px;
   height: 38px;
-  font-family: var(--accent-font);
 }
 
 .image-wrapper {
@@ -128,3 +133,63 @@ font-size: 18px;
   }
 } 
 
+.button-style {
+  font-family: var(--accent-font);
+}
+
+.save-memory-button {
+  align-items: center;
+  width: 306px;
+  height: 84px;
+  font-size: 14px;
+  margin-block-end: 100px;
+  align-self: center;
+}
+
+.floppy-icon {
+  width: 28px;
+  height: 28px;
+  margin-block-end: 8px;
+}
+
+.save-memory-button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--accent-font);
+  justify-content: center;
+}
+
+
+dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.dialog-window {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  padding-inline: 42px;
+  padding-block: 30px;
+  align-items: center;
+}
+
+.dialog-floppy-icon {
+  width: 39px;
+  height: 39px;
+  margin-inline-end: 20px;
+}
+
+.dialog-window__text {
+text-transform: uppercase;
+line-height: 150%;
+font-size: 14px;
+}
+
+.dialog-window-button {
+  grid-column: span 2;
+  margin-inline: auto;
+  width: 257px;
+  height: 38px;
+  text-transform: uppercase;
+  margin-block-start: 30px;
+}
