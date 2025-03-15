@@ -31,7 +31,7 @@
   flex-direction: column;
 }
 
-.header { 
+.header {
   align-items: center;
   padding-block-start: var(--header-padding);
   padding-block-end: var(--header-padding);
@@ -40,7 +40,7 @@
 }
 
 .header-title {
-  font-family: "PressStart2P-Regular";
+  font-family: 'PressStart2P-Regular';
   font-size: var(--header-text-size);
 }
 
@@ -58,14 +58,14 @@
 }
 
 .card {
-background-color: #fff;
-margin-block-end: 50px;
+  background-color: #fff;
+  margin-block-end: 50px;
 }
 
 .card-title {
-padding-inline: 10px;
-padding-block: 5px;
-font-size: 18px;
+  padding-inline: 10px;
+  padding-block: 5px;
+  font-size: 18px;
 }
 
 .image {
@@ -90,12 +90,20 @@ font-size: 18px;
 }
 
 .card__icon-button {
+  padding-block-end: 0;
+  padding-block-start: 0;
   margin-inline-start: auto;
   margin-inline-end: 10px;
   border: none;
-} 
+}
 
-.like-button {
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid #000;
+  transition: 0.3s ease;
+}
+
+.card__like-button {
   margin-block-start: 25px;
   margin-block-end: 25px;
   margin-inline-end: 25px;
@@ -111,10 +119,11 @@ font-size: 18px;
 .lable {
   position: absolute;
   text-align: right;
-  text-shadow:  -1px 0 var(--border-color), 
-  0 1px var(--border-color), 
-  1px 0 var(--border-color), 
-  0 -1px var(--border-color);
+  text-shadow:
+    -1px 0 var(--border-color),
+    0 1px var(--border-color),
+    1px 0 var(--border-color),
+    0 -1px var(--border-color);
   color: #000;
   font-family: var(--accent-font);
   font-size: 14px;
@@ -124,44 +133,46 @@ font-size: 18px;
   opacity: 0.5;
 }
 
-@supports ((-webkit-text-stroke: 1px var(--border-color)) or (text-stroke: 1px var(--border-color)))  {
-
+@supports (
+  (-webkit-text-stroke: 1px var(--border-color)) or
+    (text-stroke: 1px var(--border-color))
+) {
+  
   .lable {
     -webkit-text-stroke: 1px var(--border-color);
+    /* stylelint-disable-next-line property-no-unknown */
     text-stroke: 1px var(--border-color);
     mix-blend-mode: hard-light;
     opacity: 0.5;
     text-shadow: none;
   }
-} 
+}
 
 .button-style {
-    font-family: var(--accent-font);
-    position: relative;
-    display: inline-block;
-    color: white;
-    background-color: white;
-    cursor: pointer;
-    overflow: hidden;
+  font-family: var(--accent-font);
+  position: relative;
+  display: inline-block;
+  color: white;
+  background-color: white;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .button-style svg {
   fill: #000;
   z-index: 2;
   position: relative;
-   
 }
 
 .button-style::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   block-size: 100%;
   inline-size: 100%;
-  background: #000; 
+  background: #000;
   transform: translateX(-100%);
-  
 }
 
 .button-style:hover::after {
@@ -210,7 +221,6 @@ font-size: 18px;
   align-self: center;
   position: relative;
   mix-blend-mode: difference;
-  
 }
 
 dialog::backdrop {
@@ -233,19 +243,24 @@ dialog::backdrop {
 }
 
 .dialog-window__text {
-text-transform: uppercase;
-font-family: var(--accent-font);
-line-height: 150%;
-font-size: 14px;
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  line-height: 150%;
+  font-size: 14px;
 }
 
 .dialog-window-button {
   grid-column: span 2;
-  margin-inline: auto;
+  justify-self: center;
   width: var(--dialog-window-button-weight);
   height: 38px;
   text-transform: uppercase;
   margin-block-start: 30px;
+}
+
+.like-icon {
+  width: 36px;
+  height: 39px;
 }
 
 .image-0 {
@@ -262,7 +277,7 @@ font-size: 14px;
 
 .image-2 {
   filter: grayscale(0.5);
-} 
+}
 
 .image-2-end {
   filter: saturate(130%) hue-rotate(-90deg);
@@ -273,11 +288,11 @@ font-size: 14px;
 }
 
 .image-3-end {
-  filter: invert(0.45);
+  filter: invert(0.05);
 }
 
 .image-4 {
-  filter: blur(1rem);
+  filter: blur(0.01rem);
 }
 
 @media (width <= 375px) {
@@ -286,6 +301,11 @@ font-size: 14px;
     --content-width: clamp(20rem, 0rem + 100vw, 23.4375rem);
     --header-text-size: clamp(2.625rem, 0.0795rem + 12.7273vw, 3.0625rem);
     --header-caption-text-size: clamp(0.75rem, 0.0227rem + 3.6364vw, 0.875rem);
+    --dialog-window-button-weight: clamp(
+      14.125rem,
+      2.8523rem + 56.3636vw,
+      16.0625rem
+    );
   }
 
   .save-memory-button-wrapper {
@@ -305,4 +325,4 @@ font-size: 14px;
     width: 306px;
     height: 84px;
   }
-} 
+}
