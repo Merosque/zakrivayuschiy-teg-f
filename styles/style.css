@@ -137,7 +137,7 @@
   (-webkit-text-stroke: 1px var(--border-color)) or
     (text-stroke: 1px var(--border-color))
 ) {
-  
+
   .lable {
     -webkit-text-stroke: 1px var(--border-color);
     /* stylelint-disable-next-line property-no-unknown */
@@ -188,6 +188,9 @@
 }
 
 .save-memory-button {
+  display: flex;
+  font-family: var(--accent-font);
+  justify-content: center;
   align-items: center;
   width: 335px;
   height: 51px;
@@ -208,12 +211,6 @@
   color: #fff;
   z-index: 2;
   transition: 0s ease-in-out;
-}
-
-.save-memory-button-wrapper {
-  display: flex;
-  font-family: var(--accent-font);
-  justify-content: center;
 }
 
 .button__text {
@@ -308,12 +305,6 @@ dialog::backdrop {
     );
   }
 
-  .save-memory-button-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .floppy-icon {
     width: 28px;
     height: 28px;
@@ -322,7 +313,9 @@ dialog::backdrop {
   }
 
   .save-memory-button {
+    flex-direction: column;
     width: 306px;
     height: 84px;
   }
 }
+
