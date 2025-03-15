@@ -36,7 +36,7 @@ input {
   font-family: inherit;
   font-size: inherit;
   border-radius: 0;
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
 ul,

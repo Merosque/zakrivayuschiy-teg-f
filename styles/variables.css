@@ -5,8 +5,9 @@
   repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px), 
   linear-gradient(to bottom, #e7e7e7, #1a1a1a);
 --main-font: 'Inter Variable';
---accent-font: 'PressStart2P-Regular';
+--accent-font: 'PressStart2P';
 --accent-color: #000;
+--bg-color: #fff;
 --text-weight: 400;
 --header-weight: 700;
 --header-padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);

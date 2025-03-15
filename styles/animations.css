@@ -20,12 +20,12 @@
 }
 
 .core {
-  transition: fill ease-in-out 0.3s 0.03s;
+  transition: fill linear 0.3s 0.03s;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill ease-in-out 0.3s;
+  transition: fill linear 0.3s;
 }
 
 .contour {
@@ -35,17 +35,22 @@
 
 .like-icon:hover .core {
   fill: var(--accent-color);
-  transition: fill ease-in-out 0.3s;
+  transition: fill linear 0.3s;
 }
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
-  transition: fill ease-in-out 0.3s 0.05s;
+  transition: fill linear 0.3s 0.05s;
 }
 
-.like-icon:active .core,
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill linear 0.3s;
+}
+
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
+  transition: fill linear 0.3s 0.05s;
 }
 
 .like-icon.is-liked .core {
@@ -54,12 +59,12 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition: fill ease-in-out 0.3s 0.03s;
+  transition: fill linear 0.3s 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: fill ease-in-out 0.3s 0.06s;
+  transition: fill linear 0.3s 0.06s;
 }
 
 @keyframes scale-heart {
@@ -74,7 +79,7 @@
 }
 
 @keyframes sparking {
-  
+
   from {
     opacity: 0;
   }
