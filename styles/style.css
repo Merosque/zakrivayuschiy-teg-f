@@ -136,7 +136,44 @@ font-size: 18px;
 } 
 
 .button-style {
-  font-family: var(--accent-font);
+    font-family: var(--accent-font);
+    position: relative;
+    display: inline-block;
+    color: white;
+    background-color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.button-style svg {
+  fill: #000;
+  z-index: 2;
+  position: relative;
+   
+}
+
+.button-style::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  background: #000; 
+  transform: translateX(-100%);
+  
+}
+
+.button-style:hover::after {
+  transform: translateX(0);
+  transition: 0.5s ease-in-out;
+}
+
+.button-style:focus-visible {
+  position: relative;
+  box-shadow: 2px 2px 0 #000;
+  outline: none;
+  transition: 0.3s ease;
 }
 
 .save-memory-button {
@@ -149,9 +186,17 @@ font-size: 18px;
 }
 
 .floppy-icon {
+  color: #000;
   width: 21px;
   height: 21px;
   margin-inline-end: 8px;
+}
+
+.button-style:hover .floppy-icon {
+  fill: #fff;
+  color: #fff;
+  z-index: 2;
+  transition: 0s ease-in-out;
 }
 
 .save-memory-button-wrapper {
@@ -161,7 +206,11 @@ font-size: 18px;
 }
 
 .button__text {
+  z-index: 2;
   align-self: center;
+  position: relative;
+  mix-blend-mode: difference;
+  
 }
 
 dialog::backdrop {
@@ -185,6 +234,7 @@ dialog::backdrop {
 
 .dialog-window__text {
 text-transform: uppercase;
+font-family: var(--accent-font);
 line-height: 150%;
 font-size: 14px;
 }
