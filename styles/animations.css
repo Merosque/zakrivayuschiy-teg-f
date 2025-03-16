@@ -18,7 +18,8 @@
   cursor: pointer;
 }
 
-.core, .main-body {
+.core,
+.main-body {
   fill: transparent;
 }
 
@@ -35,14 +36,15 @@
   transition: fill linear 0.1s;
 }
 
-.like-icon:hover .core, .like-icon:hover .main-body {
+.like-icon:hover .core,
+.like-icon:hover .main-body {
   fill: var(--accent-color);
 }
 
-.like-icon:active .core, 
-.like-icon:active .main-body, 
+.like-icon:active .core,
+.like-icon:active .main-body,
 .like-icon.is-liked .core,
-.like-icon.is-liked .main-body   {
+.like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
 }
 
@@ -63,7 +65,7 @@
 }
 
 @keyframes sparking {
-
+  
   from {
     opacity: 0;
   }

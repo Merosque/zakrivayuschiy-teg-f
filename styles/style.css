@@ -144,7 +144,7 @@
   (-webkit-text-stroke: 1px var(--border-color)) or
     (text-stroke: 1px var(--border-color))
 ) {
-  
+
   .lable {
     -webkit-text-stroke: 1px var(--border-color);
     /* stylelint-disable-next-line property-no-unknown */
