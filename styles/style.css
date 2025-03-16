@@ -156,6 +156,7 @@
 
 .button-style {
   font-family: var(--accent-font), sans-serif;
+  border: 2px solid var(--accent-color, #000);
   position: relative;
   display: inline-block;
   color: white;
