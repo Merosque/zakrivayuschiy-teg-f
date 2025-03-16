@@ -226,6 +226,10 @@
   mix-blend-mode: difference;
 }
 
+dialog {
+  border: 2px solid var(--accent-color, #000);
+}
+
 dialog::backdrop {
   background-color: var(--accent-color);
   opacity: 0.75;
@@ -300,7 +304,7 @@ dialog::backdrop {
 }
 
 @media (width <= 375px) {
-  
+
   .page {
     --content-width: clamp(20rem, 0rem + 100vw, 23.4375rem);
     --header-text-size: clamp(2.625rem, 0.0795rem + 12.7273vw, 3.0625rem);
